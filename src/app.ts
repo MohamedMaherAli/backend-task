@@ -6,6 +6,7 @@ import { signinRouter } from './routes/signin';
 import { signupRouter } from './routes/signup';
 import { signoutRouter } from './routes/signout';
 import { currentUserRouter } from './routes/currentUser';
+import { privateRouteRouter } from './routes/privateRoute';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -21,6 +22,7 @@ app.use(
   })
 );
 
+app.use(privateRouteRouter);
 app.use(currentUserRouter);
 app.use(signinRouter);
 app.use(signupRouter);
